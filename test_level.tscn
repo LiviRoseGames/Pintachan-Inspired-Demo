@@ -10,10 +10,6 @@
 [node name="TestLevel" type="Node2D" unique_id=511208816]
 
 [node name="PauseScreen" parent="." unique_id=918638020 instance=ExtResource("3_f7g2b")]
-offset_left = -102.59875
-offset_top = 206.90662
-offset_right = -102.59875
-offset_bottom = 206.90662
 script = ExtResource("2_4ptq8")
 
 [node name="Player" parent="." unique_id=1448640886 instance=ExtResource("1_gojnm")]

@@ -13,8 +13,8 @@ grow_vertical = 2
 process_mode = 2
 
 [node name="ColorPicker" type="ColorPicker" parent="CanvasLayer" unique_id=1646957547]
-offset_left = 776.0
-offset_top = 9.0
-offset_right = 1074.0
-offset_bottom = 616.0
+offset_left = 1540.0
+offset_top = 47.0
+offset_right = 1838.0
+offset_bottom = 654.0
 color = Color(0.9411765, 0.29803923, 0.23529412, 1)
