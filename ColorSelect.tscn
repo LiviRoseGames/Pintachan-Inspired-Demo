@@ -1,0 +1,25 @@
+[gd_scene format=3 uid="uid://byx6e4aq2e5tr"]
+
+[ext_resource type="Script" uid="uid://pj3n4t3f3jya" path="res://ColorSelect.gd" id="1_ergnn"]
+[ext_resource type="Shader" uid="uid://bkx5g5pq2t7t" path="res://colorSelect.gdshader" id="2_67c4d"]
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_m75qm"]
+shader = ExtResource("2_67c4d")
+shader_parameter/picked_color = Color(0, 0, 0, 1)
+
+[sub_resource type="PlaceholderTexture2D" id="PlaceholderTexture2D_wu7qf"]
+
+[node name="Node2D" type="Node2D" unique_id=1626493959]
+script = ExtResource("1_ergnn")
+
+[node name="Sprite2D" type="Sprite2D" parent="." unique_id=1588175758]
+material = SubResource("ShaderMaterial_m75qm")
+position = Vector2(47.75, 35.75)
+scale = Vector2(96.5, 72.5)
+texture = SubResource("PlaceholderTexture2D_wu7qf")
+
+[node name="ColorPicker" type="ColorPicker" parent="." unique_id=591284743]
+offset_left = 163.0
+offset_top = -179.0
+offset_right = 461.0
+offset_bottom = 428.0

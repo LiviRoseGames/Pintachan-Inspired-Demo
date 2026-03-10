@@ -1,0 +1,177 @@
+[gd_scene format=3 uid="uid://bbyw2sgsbmxyi"]
+
+[ext_resource type="Script" uid="uid://ddw07iycebbb5" path="res://player.gd" id="1_hqtel"]
+[ext_resource type="Resource" uid="uid://dgdfsxmtdf747" path="res://DefaultMovementData.tres" id="2_b26j0"]
+[ext_resource type="Texture2D" uid="uid://bi0ruhptpw847" path="res://Art/1x/Body.png" id="3_2hs0m"]
+[ext_resource type="Texture2D" uid="uid://bjqyu83isq7mh" path="res://Art/1x/Head.png" id="4_1jxqw"]
+[ext_resource type="Shader" uid="uid://bkx5g5pq2t7t" path="res://colorSelect.gdshader" id="4_b26j0"]
+[ext_resource type="Texture2D" uid="uid://b8545qmybcbd8" path="res://Art/1x/Wheel.png" id="4_nvl01"]
+[ext_resource type="Texture2D" uid="uid://bcn4lre438iwg" path="res://Art/1x/Eye.png" id="6_2hs0m"]
+[ext_resource type="Texture2D" uid="uid://bs06ju2ov0up" path="res://Art/1x/Leg.png" id="6_ivps1"]
+[ext_resource type="Shader" uid="uid://cjg0l1v7mqmwc" path="res://oppositeColor.gdshader" id="6_n7ghd"]
+[ext_resource type="Texture2D" uid="uid://p8qiaypkyr3u" path="res://Art/1x/Antenne.png" id="7_dw050"]
+[ext_resource type="Texture2D" uid="uid://c0oc7svtmr363" path="res://Art/1x/Heart.png" id="8_b26j0"]
+[ext_resource type="Texture2D" uid="uid://cabgf68yur37q" path="res://Art/1x/1x/oMouth.png" id="12_urp6f"]
+[ext_resource type="Texture2D" uid="uid://dpny0tn3cpb21" path="res://Art/1x/1x/smile.png" id="13_bwjto"]
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_7mscg"]
+shader = ExtResource("4_b26j0")
+shader_parameter/picked_color = Color(0, 0, 0, 1)
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_tudik"]
+shader = ExtResource("6_n7ghd")
+shader_parameter/picked_color = Color(0, 0, 0, 1)
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_n7ghd"]
+shader = ExtResource("4_b26j0")
+shader_parameter/picked_color = Color(0, 0, 0, 1)
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_nvl01"]
+shader = ExtResource("6_n7ghd")
+shader_parameter/picked_color = Color(0, 0, 0, 1)
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_ivps1"]
+shader = ExtResource("4_b26j0")
+shader_parameter/picked_color = Color(0, 0, 0, 1)
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_urp6f"]
+shader = ExtResource("6_n7ghd")
+shader_parameter/picked_color = Color(0, 0, 0, 1)
+
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_dw050"]
+radius = 54.99998
+height = 159.99998
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_606se"]
+shader = ExtResource("6_n7ghd")
+shader_parameter/picked_color = Color(0, 0, 0, 1)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_u1c27"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("12_urp6f")
+}],
+"loop": true,
+"name": &"gasp",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("13_bwjto")
+}],
+"loop": true,
+"name": &"smile",
+"speed": 5.0
+}]
+
+[node name="Player" type="CharacterBody2D" unique_id=1275968766]
+script = ExtResource("1_hqtel")
+movement_data = ExtResource("2_b26j0")
+
+[node name="Robot" type="Skeleton2D" parent="." unique_id=583248713]
+scale = Vector2(0.2, 0.2)
+
+[node name="Legs" type="Node2D" parent="Robot" unique_id=202088411]
+scale = Vector2(0.99999994, 0.99999994)
+
+[node name="RobotLeg" type="Node2D" parent="Robot/Legs" unique_id=2022801823]
+position = Vector2(-195.3, -208)
+
+[node name="Wheel" type="Sprite2D" parent="Robot/Legs/RobotLeg" unique_id=465563004 groups=["primary_part"]]
+material = SubResource("ShaderMaterial_7mscg")
+position = Vector2(0, 167)
+texture = ExtResource("4_nvl01")
+
+[node name="Leg" type="Sprite2D" parent="Robot/Legs/RobotLeg" unique_id=377362520 groups=["secondary_part"]]
+material = SubResource("ShaderMaterial_tudik")
+texture = ExtResource("6_ivps1")
+
+[node name="RobotLeg2" type="Node2D" parent="Robot/Legs" unique_id=2020634463]
+position = Vector2(-65.1, -208)
+
+[node name="Wheel" type="Sprite2D" parent="Robot/Legs/RobotLeg2" unique_id=871671362 groups=["primary_part"]]
+material = SubResource("ShaderMaterial_7mscg")
+position = Vector2(0, 167)
+texture = ExtResource("4_nvl01")
+
+[node name="Leg" type="Sprite2D" parent="Robot/Legs/RobotLeg2" unique_id=1080382207 groups=["secondary_part"]]
+material = SubResource("ShaderMaterial_tudik")
+texture = ExtResource("6_ivps1")
+
+[node name="RobotLeg3" type="Node2D" parent="Robot/Legs" unique_id=660058176]
+position = Vector2(65.1, -208)
+
+[node name="Wheel" type="Sprite2D" parent="Robot/Legs/RobotLeg3" unique_id=547907194 groups=["primary_part"]]
+material = SubResource("ShaderMaterial_7mscg")
+position = Vector2(0, 167)
+texture = ExtResource("4_nvl01")
+
+[node name="Leg" type="Sprite2D" parent="Robot/Legs/RobotLeg3" unique_id=1920708662 groups=["secondary_part"]]
+material = SubResource("ShaderMaterial_tudik")
+texture = ExtResource("6_ivps1")
+
+[node name="RobotLeg4" type="Node2D" parent="Robot/Legs" unique_id=1715723984]
+position = Vector2(195.3, -208)
+
+[node name="Wheel" type="Sprite2D" parent="Robot/Legs/RobotLeg4" unique_id=897808503 groups=["primary_part"]]
+material = SubResource("ShaderMaterial_7mscg")
+position = Vector2(0, 167)
+texture = ExtResource("4_nvl01")
+
+[node name="Leg" type="Sprite2D" parent="Robot/Legs/RobotLeg4" unique_id=1421137402 groups=["secondary_part"]]
+material = SubResource("ShaderMaterial_tudik")
+texture = ExtResource("6_ivps1")
+
+[node name="Head" type="Sprite2D" parent="Robot" unique_id=53366442 groups=["primary_part"]]
+material = SubResource("ShaderMaterial_n7ghd")
+position = Vector2(0, -549.99994)
+scale = Vector2(0.99999994, 0.99999994)
+texture = ExtResource("4_1jxqw")
+
+[node name="Body" type="Sprite2D" parent="Robot" unique_id=1923520989 groups=["secondary_part"]]
+material = SubResource("ShaderMaterial_nvl01")
+position = Vector2(0, -299.99997)
+scale = Vector2(0.99999994, 0.99999994)
+texture = ExtResource("3_2hs0m")
+
+[node name="Eye" type="Sprite2D" parent="Robot" unique_id=1080265504]
+position = Vector2(-125.99999, -619.99994)
+rotation = 2.3561945
+scale = Vector2(0.9999999, 0.9999999)
+texture = ExtResource("6_2hs0m")
+
+[node name="Eye2" type="Sprite2D" parent="Robot" unique_id=1157673818]
+position = Vector2(125.99999, -619.99994)
+rotation = 2.3561945
+scale = Vector2(0.9999999, 0.9999999)
+texture = ExtResource("6_2hs0m")
+
+[node name="TotalAntenne" type="Node2D" parent="Robot" unique_id=945059413]
+position = Vector2(0, -750)
+
+[node name="Heart" type="Sprite2D" parent="Robot/TotalAntenne" unique_id=1190906571 groups=["primary_part"]]
+material = SubResource("ShaderMaterial_ivps1")
+position = Vector2(0, -225)
+scale = Vector2(0.9999997, 0.9999997)
+texture = ExtResource("8_b26j0")
+
+[node name="Antenne" type="Sprite2D" parent="Robot/TotalAntenne" unique_id=1226501064 groups=["secondary_part"]]
+material = SubResource("ShaderMaterial_urp6f")
+position = Vector2(0, -100)
+scale = Vector2(0.99999976, 0.99999976)
+texture = ExtResource("7_dw050")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=424976198]
+position = Vector2(0, -80)
+shape = SubResource("CapsuleShape2D_dw050")
+
+[node name="Camera2D" type="Camera2D" parent="." unique_id=537041353]
+offset = Vector2(0, -200)
+
+[node name="AnimatedMouth" type="AnimatedSprite2D" parent="." unique_id=354038685 groups=["secondary_part"]]
+material = SubResource("ShaderMaterial_606se")
+position = Vector2(0, -95)
+scale = Vector2(0.2, 0.2)
+sprite_frames = SubResource("SpriteFrames_u1c27")
+animation = &"smile"

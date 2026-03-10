@@ -1,0 +1,25 @@
+[gd_scene format=3 uid="uid://cd0edxx2f4gro"]
+
+[ext_resource type="Texture2D" uid="uid://b8545qmybcbd8" path="res://Art/1x/Wheel.png" id="1_4nbro"]
+[ext_resource type="Shader" uid="uid://bkx5g5pq2t7t" path="res://colorSelect.gdshader" id="1_wda22"]
+[ext_resource type="Texture2D" uid="uid://bs06ju2ov0up" path="res://Art/1x/Leg.png" id="2_mc1sp"]
+[ext_resource type="Shader" uid="uid://cjg0l1v7mqmwc" path="res://oppositeColor.gdshader" id="3_rclnc"]
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_7mscg"]
+shader = ExtResource("1_wda22")
+shader_parameter/picked_color = Color(0, 0, 0, 1)
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_tudik"]
+shader = ExtResource("3_rclnc")
+shader_parameter/picked_color = Color(0, 0, 0, 1)
+
+[node name="RobotLeg" type="Node2D" unique_id=2022801823]
+
+[node name="Wheel" type="Sprite2D" parent="." unique_id=465563004 groups=["primary_part"]]
+material = SubResource("ShaderMaterial_7mscg")
+position = Vector2(0, 167)
+texture = ExtResource("1_4nbro")
+
+[node name="Leg" type="Sprite2D" parent="." unique_id=377362520 groups=["secondary_part"]]
+material = SubResource("ShaderMaterial_tudik")
+texture = ExtResource("2_mc1sp")

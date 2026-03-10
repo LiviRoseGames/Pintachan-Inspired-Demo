@@ -1,0 +1,29 @@
+[gd_scene format=3 uid="uid://dy5xxcljnnu7p"]
+
+[ext_resource type="PackedScene" uid="uid://bbyw2sgsbmxyi" path="res://player.tscn" id="1_gojnm"]
+[ext_resource type="Script" uid="uid://b5iima20siwmp" path="res://pause_screen.gd" id="2_4ptq8"]
+[ext_resource type="PackedScene" uid="uid://mblan1e657ea" path="res://pause_screen.tscn" id="3_f7g2b"]
+[ext_resource type="Script" uid="uid://crxeqesx68vdx" path="res://static_body_2d.gd" id="4_4ptq8"]
+
+[sub_resource type="PhysicsMaterial" id="PhysicsMaterial_f7g2b"]
+
+[node name="TestLevel" type="Node2D" unique_id=511208816]
+
+[node name="PauseScreen" parent="." unique_id=918638020 instance=ExtResource("3_f7g2b")]
+offset_left = -102.59875
+offset_top = 206.90662
+offset_right = -102.59875
+offset_bottom = 206.90662
+script = ExtResource("2_4ptq8")
+
+[node name="Player" parent="." unique_id=1448640886 instance=ExtResource("1_gojnm")]
+position = Vector2(-882, 571)
+
+[node name="StaticBody2D" type="StaticBody2D" parent="." unique_id=1500528904]
+physics_material_override = SubResource("PhysicsMaterial_f7g2b")
+script = ExtResource("4_4ptq8")
+
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="StaticBody2D" unique_id=1226072246 groups=["ground"]]
+polygon = PackedVector2Array(1116, -693, 1350, -629, 1361, 860, -1452, 829, -1437, -697, -1112, -735, -1112, 614, 1116, 614)
+
+[node name="Polygon2D" type="Polygon2D" parent="StaticBody2D" unique_id=1699911829]
